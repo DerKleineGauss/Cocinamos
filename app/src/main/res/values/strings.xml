@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Cocinamos</string>
+    <string name="contentDescription">""</string>
+
+    <string name="addRecipeText">"Add a new recipe"</string>
+    <string name="buttonLinkUsage">"Use a link to another source"</string>
+    <string name="buttonImageUsage">"Use an image for your recipe"</string>
+    <string name="textInputRecipeName">"Enter recipe's name"</string>
+    <string name="textInputUrl">"Enter URL"</string>
+    <string name="textInputEnterRecipe">"Enter recipe"</string>
+
+    <string name="okay">Okay</string>
+    <string name="cancel">Cancel</string>
+
+    <string-array name="desserts">
+
+        <item>Cupcake</item>
+
+        <item>Donut</item>
+
+        <item>Eclair</item>
+
+        <item>Froyo</item>
+
+        <item>Gingerbread</item>
+
+        <item>Honeycomb</item>
+
+        <item>Ice Cream Sandwich</item>
+
+        <item>Jelly Bean</item>
+
+        <item>Kit Kat</item>
+
+        <item>Lollipop</item>
+
+        <item>Marshmallow</item>
+
+        <item>Nougat</item>
+
+    </string-array>
+</resources>
