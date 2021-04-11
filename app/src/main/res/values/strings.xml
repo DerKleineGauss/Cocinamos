@@ -11,6 +11,7 @@
 
     <string name="okay">Okay</string>
     <string name="cancel">Cancel</string>
+    <string name="recipe_titel">Enter recipe title</string>
 
     <string-array name="desserts">
 

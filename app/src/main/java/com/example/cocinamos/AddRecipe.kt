@@ -10,8 +10,10 @@ import androidx.viewpager.widget.ViewPager
 import android.view.ViewGroup
 
 import android.content.Context
+import android.view.Window
 
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 
 import androidx.viewpager.widget.PagerAdapter
 
@@ -80,7 +82,6 @@ class AddRecipe : AppCompatActivity() {
 
 
     lateinit var pageData: Array<String> //Stores the text to swipe.
-
     lateinit var inflater //Used to create individual pages
             : LayoutInflater
     lateinit var vp //Reference to class to swipe views
@@ -88,15 +89,15 @@ class AddRecipe : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_add_recipe)
         //Get the data to be swiped through
         pageData = resources.getStringArray(R.array.desserts)
         //get an inflater to be used to create single pages
         inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        //Reference ViewPager defined in activity
         vp = findViewById<View>(R.id.vp_add_recipe) as ViewPager
         //set the adapter that will create the individual pages
-        vp.setAdapter(MyPagesAdapter())
+        vp.adapter = MyPagesAdapter()
     }
 
     //Implement PagerAdapter Class to handle individual page creation
@@ -107,9 +108,20 @@ class AddRecipe : AppCompatActivity() {
         }
 
         //Create the given page (indicated by position)
-        override fun instantiateItem(container: ViewGroup, position: Int): Any {
-            val page: View = inflater.inflate(R.layout.fragment, null)
-            (page.findViewById<View>(R.id.textMessage) as TextView).setText(pageData.get(position))
+        override fun instantiateItem(container: ViewGroup, position: Int): View {
+            val page: View
+            when (position) {
+                0 -> {
+                    page = inflater.inflate(R.layout.fragment_overview, null)
+                }
+                1 -> {
+                    page = inflater.inflate(R.layout.fragment_text_input, null)
+                }
+                else -> {
+                    page = inflater.inflate(R.layout.fragment, null)
+                    (page.findViewById<View>(R.id.textMessage) as TextView).text = pageData[position]
+                }
+            }
             //Add the page to the front of the queue
             (container as ViewPager).addView(page, 0)
             return page
