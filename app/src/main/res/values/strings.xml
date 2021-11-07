@@ -8,10 +8,14 @@
     <string name="textInputRecipeName">"Enter recipe's name"</string>
     <string name="textInputUrl">"Enter URL"</string>
     <string name="textInputEnterRecipe">"Enter recipe"</string>
+    <string name="textInputEnterComment">"Enter comment"</string>
 
     <string name="okay">Okay</string>
     <string name="cancel">Cancel</string>
     <string name="recipe_titel">Enter recipe title</string>
+    <string name="titleOverview">Overview</string>
+    <string name="titleHowTo">Preparation</string>
+    <string name="titleComment">Comment</string>
 
     <string-array name="desserts">
 
